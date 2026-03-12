@@ -1,5 +1,15 @@
 /* Shared Academic Website CSS */
 
+/* Color Variables */
+:root {
+    --roxo-principal: #5b2c83;
+    --roxo-escuro: #3d1f59;
+    --verde-principal: #2e8b57;
+    --verde-claro: #3fbf7f;
+    --texto: #333;
+    --fundo: #f9f9f9;
+}
+
 /* Global Reset & Base Styles */
 * {
     margin: 0;
@@ -10,41 +20,46 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: var(--texto);
+    background-color: var(--fundo);
     padding-bottom: 40px;
 }
 
 h1, h2, h3 {
     font-family: Georgia, serif;
-    color: #2c3e50;
+    color: var(--roxo-principal);
     margin-bottom: 20px;
 }
 
+/* Links */
+
 a {
-    color: #2980b9;
+    color: var(--verde-principal);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #1a5276;
+    color: var(--verde-claro);
     text-decoration: underline;
 }
 
 /* Layout Container */
+
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 6px;
 }
 
 /* Navigation Menu */
+
 nav {
-    background-color: #2c3e50;
-    padding: 10px 0;
+    background: linear-gradient(90deg, var(--roxo-principal), var(--roxo-escuro));
+    padding: 12px 0;
     margin-bottom: 30px;
     position: sticky;
     top: 0;
@@ -63,23 +78,25 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ecf0f1;
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 0.9em;
-    padding: 5px 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
 }
 
 nav ul li a:hover {
-    color: #3498db;
-    text-decoration: none;
+    background-color: var(--verde-principal);
+    color: white;
 }
 
 /* Page Content */
+
 header {
     text-align: center;
     padding: 40px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 2px solid var(--verde-principal);
     margin-bottom: 30px;
 }
 
@@ -93,21 +110,30 @@ section {
 }
 
 section h2 {
-    border-bottom: 2px solid #2c3e50;
+    border-bottom: 2px solid var(--roxo-principal);
     padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
+/* Lists */
+
+ul li {
+    margin-bottom: 8px;
+}
+
 /* Footer */
+
 footer {
     text-align: center;
     margin-top: 50px;
-    color: #7f8c8d;
+    color: #777;
     font-size: 0.9em;
 }
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
+
     .container {
         padding: 15px;
         margin: 0 10px;
