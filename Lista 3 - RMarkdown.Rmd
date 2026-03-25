@@ -1,0 +1,50 @@
+---
+title: "Lista 3 - R Markdown"
+author: "Victor Bessa"
+date: "2026-03-25"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+library(data.table)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+```
+
+## Tabela com as 10 primeiras linhas
+
+)
+
+```{r, echo = FALSE}
+Pib_Cid <- readRDS("pib_cid.RDS")
+kable(head(Pib_Cid, 10)) %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
+  landscape()
+
+
+```
+
+# Gráfico de Distrbuição PIB
+
+```{r, echo = FALSE}
+
+ggplot(Pib_Cid, aes(x = nome_regiao, y = pib_per_capita)) +
+  geom_boxplot() +
+  scale_y_log10() +
+  labs(
+    title = "Boxplot do Pib per capita das cidades por regiao (escala log10)",
+    x = "Regiao",
+    y = "PIB per capita"
+  ) +
+  theme_minimal()
+```

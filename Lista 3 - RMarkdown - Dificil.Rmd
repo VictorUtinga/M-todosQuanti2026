@@ -1,0 +1,30 @@
+---
+title: "Lista 3 - RMarkdown - Díficil"
+author: "Victor Bessa"
+date: "2026-03-25"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## (a) Fórmula da média aritmética
+
+$$
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+$$
+
+## (b) Cálculo da média do PIB per capita
+
+```{r}
+pib <- readRDS("pib_cid.RDS")
+
+media_pib <- mean(pib$pib_per_capita, na.rm = TRUE)
+
+media_pib
+
+```
